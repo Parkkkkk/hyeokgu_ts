@@ -1,6 +1,8 @@
 import * as express from "express";
+import connect from "./schemas";
 
 const server = express();
+connect();
 
 server.set("port", process.env.PORT || 3000);
 
