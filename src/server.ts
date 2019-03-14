@@ -1,10 +1,12 @@
 import * as express from "express";
-import connect from "./schemas";
+import { Local } from "./routes";
+import { connect } from "./schemas";
 
 const server = express();
-connect();
 
+server.use("/local", Local);
 server.set("port", process.env.PORT || 3000);
+connect();
 
 server.listen(server.get("port"), () => {
     console.log("connection server");

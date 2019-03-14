@@ -1,8 +1,8 @@
 import * as mongoose from "mongoose";
 
-const MONGO_URL = `mongodb://localhost:27017/admin`;
+const MONGO_URL: string = `mongodb://localhost:27017/admin`;
 
-const connect = () => {
+export const connect = () => {
     mongoose.connect(MONGO_URL, { useNewUrlParser: true }, (err: any) => {
         if (err) {
             console.log(err);
@@ -11,5 +11,3 @@ const connect = () => {
         }
         });
 };
-
-export default connect;
