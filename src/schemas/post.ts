@@ -1,11 +1,13 @@
 import * as mongoose from "mongoose";
 
+const Schema = mongoose.Schema;
+
 export interface IPost extends mongoose.Document {
     title: string;
     content: string;
 }
 
-export const postSchema = new mongoose.Schema({
+export const postSchema = new Schema({
     title : {
         type : String,
         required : true,
